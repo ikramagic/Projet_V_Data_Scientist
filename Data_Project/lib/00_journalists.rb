@@ -5,12 +5,16 @@ def journa_list
 end
 
 def how_many_journalists
-    puts "Il y a #{journa_list.count} handle dans l'array nommée journa_list. Il y a donc 381 comptes de journalistes dans celle liste."
+    puts "1. Il y a #{journa_list.count} handle dans l'array que j'ai nommée journa_list. Il y a donc 381 comptes de journalistes dans celle liste."
+end
+
+def small_journalist
+    puts "2. Le plus petit pseudo de la liste est le suivant : #{journa_list.sort_by(&:length)[0]}."
 end
 
 def perform
     journa_list
-    how_many_journalists
+    small_journalist
 end
 
 perform
