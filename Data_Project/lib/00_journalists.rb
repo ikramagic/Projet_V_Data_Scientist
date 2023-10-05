@@ -5,17 +5,24 @@ def journa_list
 end
 
 def how_many_journalists
-    puts "1. Il y a #{journa_list.length} handle dans l'array que j'ai nommée journa_list. Il y a donc 381 comptes de journalistes dans celle liste."
+    puts "1. Il y a #{journa_list.length} 381 comptes de journalistes dans celle liste." # il y a x "handle" (=txt =sections) dans "l'array" (=liste =conteneur)
 end
 
 def small_journalist
-    puts "2. Le plus petit pseudo de la liste est le suivant : #{journa_list.sort_by(&:length)[0]}."
+    puts "2. Le plus petit pseudo de la liste est le suivant : #{journa_list.sort_by(&:length)[0]}." 
+    # Traduction de la formule : 1 -->  invoque liste 2 --> trie liste 3 --> trie là par 4 --> longueur 5 --> et donne moi la plus petite valeur de longueur
+end
+
+def five_letters_users
+    five_users_calc = journa_list.count{|word| word.length == 6} # quand je dirais five_users_calc, je veux que ça m'affiche le résultat de ça
+    # on crée des petites boites pour stocker les données avec word entre les barres
+    # on demande à ce ces boîtes se remplissent avec les valeurs dont la longueur est = à 6  (pour ignorer le arobase)
+    print "Il y a #{five_users_calc} qui ont un pseudonyme de 5 lettres."
 end
 
 def perform
     journa_list
-    how_many_journalists
-    small_journalist
+    five_letters_users
 end
 
 perform
