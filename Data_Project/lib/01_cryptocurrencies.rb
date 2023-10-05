@@ -22,3 +22,27 @@ def biggest(combined_hash)
     max_value = combined_hash.max_by{|keys, values| values.to_f}
     puts "La plus grande valeur est #{max_value}"
 end
+
+def below_6000(combined_hash)
+    values = combined_hash.values
+    filtred_values = [] 
+    values.each do |value|
+    if 
+        (value.to_f < 6000) # change symbole pour superieur/inferieur
+        filtred_values << value.to_f
+        puts "En dessous de 6000€ : #{value}"
+        end
+    end
+    return filtred_values 
+end
+
+def pricey(filtred_values)
+    price_value = filtred_values.max
+    puts "La plus chère des moins chères = #{price_value}"
+end
+
+#EXECUTE TA METHODE ICI :
+
+
+#filtred_values = below_6000(combined_hash) due to return, value filtered_value has to be reminded in order for pricey to work
+#pricey(filtred_values)
