@@ -25,7 +25,7 @@ def handle_size_sort # 6
 end
 
 def alpha_sort # 5
-    puts "Voici les pseudos dans l'ordre alphabétique : #{journa_list.sort_by(&:downcase)}"
+    puts "Voici les pseudos dans l'ordre alphabétique : #{journa_list.sort_by(&:downcase)}" # downcase inclut les minuscules dans le tri alphabétique
 end
 
 def user_position # 7
@@ -33,8 +33,17 @@ def user_position # 7
     puts "@epenser se trouve en position : #{found_user}."
 end
 
+def list_by_size
+    (0..33).each do |i| # la taille minimum sera 0 et la maximale sera 33
+    liste = journa_list.count{|word| word.length == i} # liste = prends journa_list et compte {word = autant de fois qu'il y a de longueurs de mots possible}
+        if (liste != 0) # != if different from 0, displayed with puts, if not, not displayed 
+            puts "Nombre de peuso avec #{i} caractères = #{liste}" #affiche moi les differents options de caracteres avec le nombre de hashs correspondants
+        end
+    end
+end
+
 def perform
-    user_position
+    list_by_size
 end
 
 perform
