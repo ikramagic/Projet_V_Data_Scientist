@@ -17,7 +17,7 @@ def five_letters_users # 3
     five_users_calc = journa_list.count{|word| word.length == 6} # quand je dirais five_users_calc, je veux que ça m'affiche le résultat de ça
     # on crée des petites boites pour stocker les données avec word entre les barres
     # on demande à ce ces boîtes se remplissent avec les valeurs dont la longueur est = à 6  (pour ignorer le arobase)
-    print "Il y a #{five_users_calc} qui ont un pseudonyme de 5 lettres."
+    puts "Il y a #{five_users_calc} qui ont un pseudonyme de 5 lettres."
 end
 
 def handle_size_sort # 6
@@ -28,8 +28,13 @@ def alpha_sort # 5
     puts "Voici les pseudos dans l'ordre alphabétique : #{journa_list.sort_by(&:downcase)}"
 end
 
+def user_position # 7
+    found_user = journa_list.index("@epenser")
+    puts "@epenser se trouve en position : #{found_user}."
+end
+
 def perform
-    alpha_sort
+    user_position
 end
 
 perform
